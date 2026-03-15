@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sri Sai Rama Krishna Rao Mandapaka | Civil Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0F1F3D;
+    --navy2:   #1B3260;
+    --steel:   #2C5282;
+    --accent:  #C8872A;
+    --accent2: #E8A84A;
+    --white:   #FFFFFF;
+    --offwhite:#F7F8FA;
+    --gray:    #8A9BB0;
+    --light:   #EDF1F7;
+    --text:    #1A2340;
+    --body:    #3D4F6A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ─────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    background: rgba(15,31,61,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,135,42,0.25);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem; color: var(--white); letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--accent2); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75); font-size: 0.82rem;
+    text-decoration: none; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent2); }
+
+  /* ── HERO ───────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 80px 5% 60px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px; align-items: center;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,135,42,0.15);
+    border: 1px solid rgba(200,135,42,0.4);
+    color: var(--accent2); font-size: 0.72rem;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 22px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--accent2); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:0.4;transform:scale(0.8)}
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    color: var(--white); line-height: 1.1; margin-bottom: 14px;
+  }
+  .hero-name em { color: var(--accent2); font-style: normal; }
+  .hero-tagline {
+    font-size: 1.05rem; color: rgba(255,255,255,0.6);
+    line-height: 1.7; margin-bottom: 32px; max-width: 500px;
+    font-weight: 300;
+  }
+  .hero-cta {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn-primary {
+    padding: 12px 28px;
+    background: var(--accent); color: var(--white);
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-outline {
+    padding: 12px 28px;
+    border: 1.5px solid rgba(255,255,255,0.3); color: var(--white);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+    text-decoration: none; border-radius: 4px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent2); background: rgba(200,135,42,0.1); }
+
+  /* Hero card */
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 32px;
+  }
+  .hero-card-title {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent2); margin-bottom: 20px;
+  }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 16px;
+    transition: border-color 0.2s;
+  }
+  .stat-box:hover { border-color: rgba(200,135,42,0.4); }
+  .stat-val {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem; color: var(--accent2); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); font-weight: 400; }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag {
+    padding: 4px 11px; background: rgba(44,82,130,0.5);
+    border: 1px solid rgba(44,82,130,0.8);
+    color: rgba(255,255,255,0.7); font-size: 0.72rem;
+    border-radius: 3px; font-weight: 500;
+  }
+
+  /* hero bg decoration */
+  .hero-bg-lines {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-accent-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--navy2) 0%, var(--steel) 40%, var(--accent) 100%);
+  }
+
+  /* ── SECTION COMMON ─────────────────────────────── */
+  section { padding: 90px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    color: var(--navy); line-height: 1.2; margin-bottom: 14px;
+  }
+  .section-desc {
+    font-size: 0.95rem; color: var(--body);
+    line-height: 1.75; max-width: 580px; margin-bottom: 48px;
+  }
+  .rule {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    margin: 14px 0 44px; border-radius: 2px;
+  }
+
+  /* ── ABOUT ──────────────────────────────────────── */
+  #about { background: var(--offwhite); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+  }
+  .about-text p {
+    font-size: 0.95rem; color: var(--body); line-height: 1.8; margin-bottom: 16px;
+  }
+  .about-highlights { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+  .highlight-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px; background: var(--white); border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    box-shadow: 0 2px 10px rgba(15,31,61,0.06);
+  }
+  .hi-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .hi-title { font-weight: 600; font-size: 0.88rem; color: var(--navy); margin-bottom: 2px; }
+  .hi-desc { font-size: 0.82rem; color: var(--body); }
+
+  /* ── PROJECTS ───────────────────────────────────── */
+  #projects { background: var(--white); }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .project-card {
+    border: 1px solid var(--light); border-radius: 10px; overflow: hidden;
+    transition: box-shadow 0.25s, transform 0.2s;
+  }
+  .project-card:hover { box-shadow: 0 12px 40px rgba(15,31,61,0.12); transform: translateY(-3px); }
+  .project-card.featured { grid-column: 1/-1; display: grid; grid-template-columns: 1fr 1fr; }
+  .project-banner {
+    background: var(--navy); padding: 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 180px;
+  }
+  .project-card.featured .project-banner { min-height: 240px; }
+  .project-type {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent2);
+    margin-bottom: 10px;
+  }
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; color: var(--white); line-height: 1.3;
+  }
+  .project-card.featured .project-title { font-size: 1.6rem; }
+  .project-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .badge {
+    padding: 3px 9px; background: rgba(200,135,42,0.2);
+    border: 1px solid rgba(200,135,42,0.4);
+    color: var(--accent2); font-size: 0.68rem; font-weight: 600;
+    border-radius: 3px; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .project-body { padding: 24px; background: var(--white); }
+  .project-card.featured .project-body { padding: 32px; }
+  .project-desc {
+    font-size: 0.88rem; color: var(--body); line-height: 1.7; margin-bottom: 16px;
+  }
+  .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .project-bullets li {
+    font-size: 0.83rem; color: var(--body); padding-left: 16px; position: relative; line-height: 1.5;
+  }
+  .project-bullets li::before {
+    content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 2px;
+  }
+  .placeholder-note {
+    display: inline-block; margin-top: 14px;
+    font-size: 0.75rem; color: var(--gray);
+    font-style: italic;
+    background: var(--offwhite); padding: 4px 10px; border-radius: 4px;
+  }
+
+  /* ── SKILLS ─────────────────────────────────────── */
+  #skills { background: var(--navy); }
+  #skills .section-title { color: var(--white); }
+  #skills .section-desc { color: rgba(255,255,255,0.5); }
+  #skills .section-label { color: var(--accent2); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .skill-cat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .skill-cat:hover { border-color: rgba(200,135,42,0.35); }
+  .skill-cat-icon { font-size: 1.5rem; margin-bottom: 10px; }
+  .skill-cat-title {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent2); margin-bottom: 14px;
+  }
+  .skill-list { display: flex; flex-direction: column; gap: 10px; }
+  .skill-item { }
+  .skill-name {
+    display: flex; justify-content: space-between;
+    font-size: 0.83rem; color: rgba(255,255,255,0.8);
+    margin-bottom: 5px;
+  }
+  .skill-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--steel), var(--accent2));
+    transform-origin: left;
+    animation: growBar 1.2s ease forwards;
+    transform: scaleX(0);
+  }
+  @keyframes growBar { to { transform: scaleX(1); } }
+
+  /* ── CERTIFICATIONS ─────────────────────────────── */
+  #certs { background: var(--offwhite); }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
+  .cert-card {
+    background: var(--white); border: 1px solid var(--light);
+    border-radius: 10px; padding: 22px 20px;
+    display: flex; flex-direction: column; align-items: flex-start;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .cert-card:hover { box-shadow: 0 8px 30px rgba(15,31,61,0.1); transform: translateY(-2px); }
+  .cert-icon { font-size: 1.6rem; margin-bottom: 10px; }
+  .cert-name { font-weight: 600; font-size: 0.88rem; color: var(--navy); margin-bottom: 4px; }
+  .cert-issuer { font-size: 0.76rem; color: var(--gray); }
+  .cert-status {
+    margin-top: 10px; padding: 3px 9px;
+    background: rgba(44,82,130,0.1); border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; color: var(--steel);
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* ── EDUCATION ──────────────────────────────────── */
+  #education { background: var(--white); }
+  .edu-timeline { display: flex; flex-direction: column; gap: 0; }
+  .edu-item {
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 0; position: relative;
+  }
+  .edu-item::before {
+    content: ''; position: absolute;
+    left: 179px; top: 0; bottom: 0;
+    width: 2px; background: var(--light);
+  }
+  .edu-date {
+    padding: 28px 28px 28px 0; text-align: right;
+    font-size: 0.8rem; color: var(--gray); font-weight: 500;
+    padding-top: 30px;
+  }
+  .edu-dot {
+    position: absolute; left: 171px; top: 30px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--light);
+    z-index: 1;
+  }
+  .edu-content {
+    padding: 24px 0 24px 36px;
+    border-bottom: 1px solid var(--light);
+  }
+  .edu-item:last-child .edu-content { border-bottom: none; }
+  .edu-degree {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem; color: var(--navy); margin-bottom: 3px;
+  }
+  .edu-school { font-size: 0.88rem; color: var(--steel); font-weight: 500; margin-bottom: 8px; }
+  .edu-detail { font-size: 0.83rem; color: var(--body); line-height: 1.6; }
+  .edu-gpa {
+    display: inline-block; margin-top: 8px;
+    padding: 3px 10px; background: rgba(200,135,42,0.1);
+    border: 1px solid rgba(200,135,42,0.3);
+    color: var(--accent); font-size: 0.75rem; font-weight: 600;
+    border-radius: 3px;
+  }
+
+  /* ── CONTACT ────────────────────────────────────── */
+  #contact {
+    background: var(--navy);
+    text-align: center;
+  }
+  #contact .section-title { color: var(--white); }
+  #contact .section-desc { color: rgba(255,255,255,0.5); margin: 0 auto 40px; }
+  #contact .rule { margin: 14px auto 40px; }
+  .contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 50px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 9px;
+    padding: 12px 22px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .contact-link:hover { background: rgba(200,135,42,0.15); border-color: rgba(200,135,42,0.4); color: var(--accent2); }
+  .contact-link svg { width: 16px; height: 16px; fill: currentColor; }
+  .footer-note {
+    font-size: 0.75rem; color: rgba(255,255,255,0.25); margin-top: 20px;
+  }
+
+  /* ── FADE-IN ANIMATION ──────────────────────────── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ─────────────────────────────────── */
+  @media (max-width: 800px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .edu-item { grid-template-columns: 100px 1fr; }
+    .edu-item::before { left: 99px; }
+    .edu-dot { left: 91px; }
+    nav .nav-links { display: none; }
+  }
+  @media (max-width: 520px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sri<span>RK</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Open to Opportunities</div>
+      <h1 class="hero-name">
+        Sri Sai Rama<br/>Krishna Rao<br/><em>Mandapaka</em>
+      </h1>
+      <p class="hero-tagline">
+        Civil Engineer &amp; Construction Manager — specializing in large-scale
+        infrastructure, QA/QC, CPM scheduling, and BIM-integrated project delivery.
+        MS Civil Engineering, UAB · GPA 3.60
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get In Touch</a>
+        <a href="#projects" class="btn-outline">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-card fade-up">
+      <div class="hero-card-title">At a Glance</div>
+      <div class="stat-grid">
+        <div class="stat-box"><div class="stat-val">3.60</div><div class="stat-label">MS GPA · UAB</div></div>
+        <div class="stat-box"><div class="stat-val">QA/QC</div><div class="stat-label">Field Management</div></div>
+        <div class="stat-box"><div class="stat-val">CPM</div><div class="stat-label">Scheduling</div></div>
+        <div class="stat-box"><div class="stat-val">BIM</div><div class="stat-label">Revit · Navisworks</div></div>
+      </div>
+      <div class="tech-tags">
+        <span class="tag">AutoCAD</span>
+        <span class="tag">Primavera P6</span>
+        <span class="tag">Bluebeam</span>
+        <span class="tag">MS Project</span>
+        <span class="tag">RISA</span>
+        <span class="tag">RAM</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-accent-bar"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Building Infrastructure.<br/>Delivering Results.</h2>
+    <div class="rule"></div>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>
+          I am a Civil Engineering professional with a Master of Science in Civil Engineering
+          (Construction Management focus) from the University of Alabama at Birmingham, graduating
+          December 2025 with a 3.60 GPA. My foundation spans structural analysis, project management,
+          BIM workflows, and real-world field operations.
+        </p>
+        <p>
+          My hands-on experience comes from managing a large-scale government infrastructure project —
+          where I was responsible for QA/QC oversight, contractor and subcontractor coordination,
+          cost and quantity verification, and CPM-based schedule support from ground-up execution
+          through close-out documentation.
+        </p>
+        <p>
+          I am driven by a long-term vision: to grow into a complete construction professional —
+          owning full project lifecycles and eventually leading my own infrastructure firm. I bring
+          precision, accountability, and a builder's mindset to every project.
+        </p>
+      </div>
+      <div class="about-highlights fade-up">
+        <div class="highlight-item">
+          <span class="hi-icon">🏗️</span>
+          <div>
+            <div class="hi-title">Field-Tested Experience</div>
+            <div class="hi-desc">Hands-on QA/QC and coordination on a large-scale government infrastructure project with multi-party stakeholders.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="hi-icon">📐</span>
+          <div>
+            <div class="hi-title">BIM & Design Proficiency</div>
+            <div class="hi-desc">Experienced in Revit, Navisworks, AutoCAD, and Bluebeam Revu for coordinated project delivery.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="hi-icon">📊</span>
+          <div>
+            <div class="hi-title">Scheduling & Cost Control</div>
+            <div class="hi-desc">CPM scheduling support using Primavera P6 and MS Project; BOQ verification and cost tracking.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <span class="hi-icon">🎓</span>
+          <div>
+            <div class="hi-title">Graduate Academic Excellence</div>
+            <div class="hi-desc">MS Civil Engineering — UAB, GPA 3.60. Coursework in construction management, structural systems, and IBC code applications.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label">Projects & Experience</p>
+    <h2 class="section-title">Work That Speaks<br/>for Itself</h2>
+    <div class="rule"></div>
+    <div class="projects-grid">
+
+      <!-- FEATURED PROJECT -->
+      <div class="project-card featured fade-up">
+        <div class="project-banner">
+          <div>
+            <div class="project-type">Featured · Government Infrastructure</div>
+            <div class="project-title">Large-Scale Government<br/>Infrastructure Project</div>
+          </div>
+          <div class="project-badges">
+            <span class="badge">QA/QC</span>
+            <span class="badge">CPM Scheduling</span>
+            <span class="badge">Cost Verification</span>
+            <span class="badge">Multi-Party Coordination</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            Served as the on-site Field/QA-QC Engineer on a complex government infrastructure project,
+            overseeing construction quality, contractor compliance, and schedule adherence across
+            multiple project phases.
+          </p>
+          <ul class="project-bullets">
+            <li>Managed QA/QC processes ensuring full compliance with project specifications and regulatory standards across all construction phases.</li>
+            <li>Coordinated directly with contractors and subcontractors to monitor progress, resolve on-site issues, and maintain schedule adherence.</li>
+            <li>Performed cost and quantity verification — reviewing BOQs, validating material deliveries, and cross-checking invoices to prevent overruns.</li>
+            <li>Supported CPM network updates and baseline schedule reviews, identifying critical path activities and flagging potential delays early.</li>
+            <li>Maintained comprehensive field reports, inspection logs, and RFI documentation for stakeholder reporting and project records.</li>
+          </ul>
+          <span class="placeholder-note">📎 Full project report &amp; AutoCAD drawings available upon request</span>
+        </div>
+      </div>
+
+      <!-- INTERNSHIP -->
+      <div class="project-card fade-up">
+        <div class="project-banner">
+          <div>
+            <div class="project-type">Internship Experience</div>
+            <div class="project-title">Civil Engineering<br/>Internship</div>
+          </div>
+          <div class="project-badges">
+            <span class="badge">Site Operations</span>
+            <span class="badge">Technical Drafting</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            Gained practical site and technical experience during a structured internship program,
+            applying academic knowledge to real construction scenarios.
+          </p>
+          <ul class="project-bullets">
+            <li>Assisted with site inspections, measurements, and progress monitoring under senior engineers.</li>
+            <li>Prepared technical documentation, drawings, and quantity take-offs using AutoCAD and Excel.</li>
+            <li>Participated in field coordination meetings and contributed to project reporting workflows.</li>
+          </ul>
+          <span class="placeholder-note">📎 Internship report available upon request</span>
+        </div>
+      </div>
+
+      <!-- MS THESIS / ACADEMIC -->
+      <div class="project-card fade-up">
+        <div class="project-banner">
+          <div>
+            <div class="project-type">Academic · UAB</div>
+            <div class="project-title">Graduate Research &amp;<br/>Academic Projects</div>
+          </div>
+          <div class="project-badges">
+            <span class="badge">Structural Analysis</span>
+            <span class="badge">BIM</span>
+            <span class="badge">Construction Mgmt</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            Applied structural design, BIM modeling, and construction management principles through
+            advanced coursework and graduate-level projects at UAB.
+          </p>
+          <ul class="project-bullets">
+            <li>Structural system design and analysis using RISA, RAM, and SAPP per IBC standards.</li>
+            <li>BIM coordination exercises using Revit and Navisworks for clash detection and model review.</li>
+            <li>Construction planning and scheduling assignments using Primavera P6 and MS Project.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Technical Skills</p>
+    <h2 class="section-title">Tools &amp; Competencies</h2>
+    <p class="section-desc">A cross-disciplinary toolkit spanning field operations, digital design, structural analysis, and project management.</p>
+    <div class="skills-grid">
+
+      <div class="skill-cat fade-up">
+        <div class="skill-cat-icon">📋</div>
+        <div class="skill-cat-title">Project Management</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>Primavera P6</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>MS Project</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>CPM Scheduling</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>QA/QC Management</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat fade-up">
+        <div class="skill-cat-icon">🖥️</div>
+        <div class="skill-cat-title">BIM & Design</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>AutoCAD</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Revit</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Navisworks</span><span>78%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Bluebeam Revu</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat fade-up">
+        <div class="skill-cat-icon">🏛️</div>
+        <div class="skill-cat-title">Structural Analysis</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>RISA</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>RAM</span><span>78%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>SAPP</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>STAAD.Pro</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat fade-up">
+        <div class="skill-cat-icon">🏗️</div>
+        <div class="skill-cat-title">Field Operations</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>Contractor Coordination</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>RFI & Inspection Logs</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>BOQ Verification</span><span>87%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>IBC Code Compliance</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-cat fade-up" style="grid-column: span 2;">
+        <div class="skill-cat-icon">💬</div>
+        <div class="skill-cat-title">Professional Skills</div>
+        <div class="skill-list" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="skill-item">
+            <div class="skill-name"><span>Written Communication</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Stakeholder Coordination</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Cost Estimation</span><span>83%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:83%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Organizational Skills</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-inner">
+    <p class="section-label">Certifications</p>
+    <h2 class="section-title">Credentials &amp; Qualifications</h2>
+    <div class="rule"></div>
+    <div class="certs-grid">
+      <div class="cert-card fade-up">
+        <div class="cert-icon">🦺</div>
+        <div class="cert-name">OSHA 30-Hour</div>
+        <div class="cert-issuer">Construction Safety</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">📐</div>
+        <div class="cert-name">AutoCAD Certified</div>
+        <div class="cert-issuer">Autodesk</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">🏗️</div>
+        <div class="cert-name">Revit Certified</div>
+        <div class="cert-issuer">Autodesk</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">🔩</div>
+        <div class="cert-name">STAAD.Pro</div>
+        <div class="cert-issuer">Bentley Systems</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-icon">📎</div>
+        <div class="cert-name">Additional Certs</div>
+        <div class="cert-issuer">On Request</div>
+        <div class="cert-status">Available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="rule"></div>
+    <div class="edu-timeline">
+      <div class="edu-item fade-up">
+        <div class="edu-date">Dec 2025</div>
+        <div class="edu-dot"></div>
+        <div class="edu-content">
+          <div class="edu-degree">M.S. Civil Engineering</div>
+          <div class="edu-school">University of Alabama at Birmingham (UAB) · Birmingham, AL</div>
+          <div class="edu-detail">
+            Focus: Construction Management · Coursework in structural systems,
+            BIM coordination, CPM scheduling, cost estimation, and IBC code applications.
+          </div>
+          <span class="edu-gpa">GPA: 3.60 / 4.00</span>
+        </div>
+      </div>
+      <div class="edu-item fade-up">
+        <div class="edu-date">Prior</div>
+        <div class="edu-dot"></div>
+        <div class="edu-content">
+          <div class="edu-degree">B.E. / B.Tech Civil Engineering</div>
+          <div class="edu-school">India</div>
+          <div class="edu-detail">
+            Foundation in structural design, surveying, geotechnical engineering, construction
+            materials, and engineering mechanics. Gained early field exposure through internships.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Let's Connect</p>
+    <h2 class="section-title">Open to Opportunities</h2>
+    <div class="rule"></div>
+    <p class="section-desc">
+      Actively seeking entry-level Project Engineer roles in construction, transportation,
+      and public works across the USA. Open to relocation. Let's talk.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:mandapakakrishnarao@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        mandapakakrishnarao@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/sri-sai-rama-krishna-rao-mandapaka/" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17H6.5v-7H9v7zm-1.25-8a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zM18 17h-2.5v-3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V17H10v-7h2.5v1.1c.46-.7 1.27-1.1 2-1.1 1.66 0 3 1.34 3 3V17z"/></svg>
+        LinkedIn Profile
+      </a>
+      <a href="mailto:mandapakakrishnarao@gmail.com?subject=Resume Request - Sri RK Mandapaka" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+        Request Resume
+      </a>
+    </div>
+    <p class="footer-note">Sri Sai Rama Krishna Rao Mandapaka · Birmingham, AL · Open to Relocation · 2025</p>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Skill bar animation on scroll
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-fill').forEach((bar, i) => {
+          bar.style.animationDelay = `${i * 0.1}s`;
+          bar.style.animationPlayState = 'running';
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.skill-cat').forEach(cat => {
+    cat.querySelectorAll('.skill-fill').forEach(bar => {
+      bar.style.animationPlayState = 'paused';
+    });
+    skillObserver.observe(cat);
+  });
+</script>
+</body>
+</html>
